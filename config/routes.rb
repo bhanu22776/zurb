@@ -1,9 +1,17 @@
 Zurb::Application.routes.draw do
+  resources :socials
+
+
+  resources :photos
+
+
   devise_for :users
 
   resources :videos
 
   root :to => 'videos#mainpage'
+
+  get "contact" => "photos#contact", :as => "contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
