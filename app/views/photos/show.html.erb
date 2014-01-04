@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @photo.name %>
+  	<b>Name:</b>
+  	<%= @photo.name %>
+</p>
+<p>
+  	<b>Photo:</b>
+	<%= image_tag @photo.image.url(:small), :class => "th [radius]" %>
 </p>
 
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<div class = "large-8 columns">
+	<%= link_to 'Edit', edit_photo_path(@photo) , :class => "tiny button" %> 
+	<%= link_to 'Back', photos_path , :class => "tiny button" %>
+</div>

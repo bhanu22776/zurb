@@ -28,6 +28,9 @@ gem 'devise'
 
 gem "simple_form"
 
+gem "proxylocal"
+
+gem 'paperclip'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

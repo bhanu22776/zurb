@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Photo</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,52 +12,22 @@
 <% @photos.each do |photo| %>
   <tr>
     <td><%= photo.name %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= image_tag photo.image.url(:small), :class => "th [radius]" %></td>
+    <td><%= link_to 'Show', photo , :class => "tiny button" %></td>
+    <td><%= link_to 'Edit', edit_photo_path(photo) , :class => "tiny button" %></td>
+    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } , :class => "tiny button" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Photo', new_photo_path %>
- -->
+<%= link_to 'New Photo', new_photo_path, :class => "tiny button" %> -->
+
 <ul class="small-block-grid-3">
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide1.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide2.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide3.jpg"></a></li>
-  <li><a class="th [radius]" href="path/to/your/img"><img src="/assets/slide4.jpg"></a></li>
+  <% @photos.each do |photo| %>
+    <li>
+      <%= image_tag photo.image, :class => "th [radius]", :style => "width:320px;height:180px;" %>
+    </li>
+  <% end %>
 </ul>
