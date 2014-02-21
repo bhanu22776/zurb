@@ -18,23 +18,23 @@
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><%= link_to "Awesome Site", root_path %></a></h1>
+          <h1><%= link_to "Catchmenow", root_path %></a></h1>
         </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
 
       </ul>
-      <ul class="left">
+      <!-- <ul class="left">
         <li class="has-form">
           <div class="row collapse">
             <div class="large-8 small-9 columns">
               <input type="text" placeholder="Search here....">
             </div>
             <div class="large-4 small-3 columns">
-              <a href="#" class="button expand">Search</a>
+              <a href="" class="button expand">Search</a>
             </div>
           </div>
         </li>
-      </ul>
+      </ul> -->
       <section class="top-bar-section">
         <ul class="right">
           <li class="divider"></li>
@@ -44,7 +44,7 @@
           <li class="divider"></li>
           <li><%= link_to "News", socials_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Contact Us", contact_path %></li>
+          <li><%= link_to "About Us", about_path %></li>
           <li class="divider"></li>
           <% if user_signed_in? %>
             <li class="has-dropdown">
@@ -71,7 +71,7 @@
     </nav>
     <br><br>
     <div class="row">
-      <div class="small-12 columns"><%= yield %></div>
+      <div class="large-12 columns"><%= yield %></div>
     </div>
     <%= javascript_include_tag "application" %>
   </body>

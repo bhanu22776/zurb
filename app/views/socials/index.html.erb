@@ -1,29 +1,62 @@
-<h1>Listing socials</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Date</th>
-    <th>Place</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @socials.each do |social| %>
-  <tr>
-    <td><%= social.title %></td>
-    <td><%= social.content %></td>
-    <td><%= social.date %></td>
-    <td><%= social.place %></td>
-    <td><%= link_to 'Show', social %></td>
-    <td><%= link_to 'Edit', edit_social_path(social) %></td>
-    <td><%= link_to 'Destroy', social, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Social', new_social_path %>
+<h1>AJ KA SAMACHAR</h1>
+<div class="large-12 columns panel">
+  <h3 style="color:#134654;">Breaking News</h3>
+  <% @flashnews.last(4).each do |f| %>
+    <div class="large-3 columns flashnews panel" style="font-family:cursive;">
+      <% f.title %>
+      <%= raw truncate(f.content, :length => 150, :separator => ' ') %>
+      <% f.place %>
+      <% f.date %>
+    </div>
+  <% end %>
+</div>
+<div class="large-12 columns">
+  <div class="large-3 columns panel">
+    <ul class="side-contents">
+      <% @socials.each do |social| %>
+        <li> <%= social.title %> </li><hr>
+      <% end %>
+    </ul> 
+  </div>
+  <% @socials.each do |social| %>
+    <div class="large-3 columns" id="news">
+      <div class="panel" id = "vartha">
+      <h6><%= social.title %></h6>
+      <%= image_tag social.photo, :class => "vartha-img" %>
+      <%= raw truncate(social.content, :length => 50, :separator => ' ') %><br>
+      <%= social.place %>.<br>
+      <%= social.date.strftime("%a, %b %d %Y") %>
+    </div>
+    </div>
+  <% end %>
+</div>
+<style type="text/css">
+body{
+  background-image: url("/assets/white-background.jpg");
+}
+h1, h3, h6{
+  font-family: cursive;
+  text-align: center;
+}
+.vartha-img{
+  min-height: 110px;
+}
+.side-contents li{
+  list-style-type: none;
+}
+/*
+#vartha{
+  height: 240px;
+}
+.vartha-img{
+  height: 100px;
+}
+@media (max-width: 687px){
+  #vartha{
+    height: 260px;
+    } 
+  .vartha-img{
+    height: 48px;
+  }
+}*/
+</style>

@@ -32,6 +32,12 @@ gem "proxylocal"
 
 gem 'paperclip'
 
+gem "cancan"
+
+gem 'rails_admin'
+
+gem 'meta_search'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

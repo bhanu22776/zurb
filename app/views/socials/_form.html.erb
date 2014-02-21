@@ -1,14 +1,16 @@
 <%= simple_form_for(@social) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="large-8 columns">
     <%= f.input :title %>
     <%= f.input :content %>
-    <%= f.input :date %>
+    <label>Photo</label>
+    <%= f.file_field :photo %>
+    <%= f.input :date, order: [:day, :month, :year] %>
     <%= f.input :place %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="large-8 columns">
+    <%= f.button :submit, :class => "tiny button"%>
   </div>
 <% end %>

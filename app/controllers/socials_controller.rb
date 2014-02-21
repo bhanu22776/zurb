@@ -3,7 +3,7 @@ class SocialsController < ApplicationController
   # GET /socials.json
   def index
     @socials = Social.all
-
+    @flashnews = Flashnews.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @socials }
